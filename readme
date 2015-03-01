@@ -1,0 +1,27 @@
+d3.range(1000):
+modified to increase the number of circles.
+var width = 960,
+height = 800;
+    increased the width and height to increase the screen size
+
+    radius: Math.random() * 12 + 2};
+    Decrease of bubble size.
+
+    color = d3.scale.category20b();
+    Color has been modified from d3.scale.category10();
+var force = d3.layout.force()
+    .gravity(0.01)
+    .charge(function(d, i) { return i ? 0 : -500; })
+
+    Modified the gravity force and the return value for the space of the pointer with the circles.
+
+    svg.selectAll("circle")
+    .data(nodes.slice(1))
+  .enter().append("circle")
+    .attr("r", function(d) { return d.radius; })
+    .style("fill", function(d, i) { return color(i); });
+
+    this fn defines the radius and the color of the circles.
+
+
+    http://fwz.github.io/2013/09/15/learn-d3-the-hard-way-%281%29----collision-detection/
